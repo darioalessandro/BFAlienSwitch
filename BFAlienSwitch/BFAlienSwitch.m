@@ -46,7 +46,16 @@
 }
 
 -(void)toggleSwitch{
+    CATransition * trans=[CATransition animation];
+    [trans setDuration:0.5];
+    [trans setType:kCATransitionFade];
+    [trans setSubtype:kCATransitionFromLeft];
+    [self.layer addAnimation:trans forKey:@"switchState"];
+    [trans setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    
     [self setOn:![self isOn]];
+    if(_handler)
+        _handler(self);
 }
 
 -(void)setHandler:(BFAlienSwitchHandler) handler{
@@ -56,9 +65,9 @@
 -(void)setOn:(BOOL)on{
     _on=on;
     [self setNeedsDisplay];
-    if(_handler)
-        _handler(self);
 }
+    
+
 
 - (void)drawRect:(CGRect)rect
 {
