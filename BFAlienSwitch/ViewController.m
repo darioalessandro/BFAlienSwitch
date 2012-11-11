@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "BFAlienSwitch.h"
 
 @interface ViewController ()
 
@@ -17,7 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self.alienSwitch setHandler:^(BFAlienSwitch *alienSwitch) {
+        NSLog(@"handler");
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning

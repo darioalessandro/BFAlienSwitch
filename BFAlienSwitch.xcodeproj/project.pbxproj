@@ -18,6 +18,13 @@
 		062C3EA2164F50CF0090CB27 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 062C3EA1164F50CF0090CB27 /* Default-568h@2x.png */; };
 		062C3EA5164F50CF0090CB27 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062C3EA3164F50CF0090CB27 /* MainStoryboard.storyboard */; };
 		062C3EA8164F50CF0090CB27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 062C3EA7164F50CF0090CB27 /* ViewController.m */; };
+		062C3EB4164F52D80090CB27 /* BFAlienSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 062C3EB3164F52D80090CB27 /* BFAlienSwitch.m */; };
+		062C3EC1164F55100090CB27 /* button_glow_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 062C3EBC164F55100090CB27 /* button_glow_01.png */; };
+		062C3EC2164F55100090CB27 /* button_MID_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 062C3EBD164F55100090CB27 /* button_MID_01.png */; };
+		062C3EC3164F55100090CB27 /* button_OFF_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 062C3EBE164F55100090CB27 /* button_OFF_01@2x.png */; };
+		062C3EC4164F55100090CB27 /* button_ON_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 062C3EBF164F55100090CB27 /* button_ON_01@2x.png */; };
+		062C3EC5164F55100090CB27 /* new_icon_push_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 062C3EC0164F55100090CB27 /* new_icon_push_01.png */; };
+		062C3EC7164F559C0090CB27 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062C3EC6164F559C0090CB27 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,14 @@
 		062C3EA4164F50CF0090CB27 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		062C3EA6164F50CF0090CB27 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		062C3EA7164F50CF0090CB27 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		062C3EB2164F52D80090CB27 /* BFAlienSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFAlienSwitch.h; sourceTree = "<group>"; };
+		062C3EB3164F52D80090CB27 /* BFAlienSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFAlienSwitch.m; sourceTree = "<group>"; };
+		062C3EBC164F55100090CB27 /* button_glow_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_glow_01.png; sourceTree = "<group>"; };
+		062C3EBD164F55100090CB27 /* button_MID_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_MID_01.png; sourceTree = "<group>"; };
+		062C3EBE164F55100090CB27 /* button_OFF_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_OFF_01@2x.png"; sourceTree = "<group>"; };
+		062C3EBF164F55100090CB27 /* button_ON_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_ON_01@2x.png"; sourceTree = "<group>"; };
+		062C3EC0164F55100090CB27 /* new_icon_push_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_icon_push_01.png; sourceTree = "<group>"; };
+		062C3EC6164F559C0090CB27 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				062C3EC7164F559C0090CB27 /* QuartzCore.framework in Frameworks */,
 				062C3E8C164F50CE0090CB27 /* UIKit.framework in Frameworks */,
 				062C3E8E164F50CE0090CB27 /* Foundation.framework in Frameworks */,
 				062C3E90164F50CE0090CB27 /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +72,7 @@
 		062C3E7C164F50CE0090CB27 = {
 			isa = PBXGroup;
 			children = (
+				062C3EC6164F559C0090CB27 /* QuartzCore.framework */,
 				062C3E91164F50CE0090CB27 /* BFAlienSwitch */,
 				062C3E8A164F50CE0090CB27 /* Frameworks */,
 				062C3E88164F50CE0090CB27 /* Products */,
@@ -83,12 +100,15 @@
 		062C3E91164F50CE0090CB27 /* BFAlienSwitch */ = {
 			isa = PBXGroup;
 			children = (
+				062C3EBB164F55100090CB27 /* switch */,
 				062C3E9A164F50CE0090CB27 /* AppDelegate.h */,
 				062C3E9B164F50CE0090CB27 /* AppDelegate.m */,
 				062C3EA3164F50CF0090CB27 /* MainStoryboard.storyboard */,
 				062C3EA6164F50CF0090CB27 /* ViewController.h */,
 				062C3EA7164F50CF0090CB27 /* ViewController.m */,
 				062C3E92164F50CE0090CB27 /* Supporting Files */,
+				062C3EB2164F52D80090CB27 /* BFAlienSwitch.h */,
+				062C3EB3164F52D80090CB27 /* BFAlienSwitch.m */,
 			);
 			path = BFAlienSwitch;
 			sourceTree = "<group>";
@@ -105,6 +125,19 @@
 				062C3EA1164F50CF0090CB27 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		062C3EBB164F55100090CB27 /* switch */ = {
+			isa = PBXGroup;
+			children = (
+				062C3EBC164F55100090CB27 /* button_glow_01.png */,
+				062C3EBD164F55100090CB27 /* button_MID_01.png */,
+				062C3EBE164F55100090CB27 /* button_OFF_01@2x.png */,
+				062C3EBF164F55100090CB27 /* button_ON_01@2x.png */,
+				062C3EC0164F55100090CB27 /* new_icon_push_01.png */,
+			);
+			name = switch;
+			path = buttons/switch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +196,11 @@
 				062C3EA0164F50CF0090CB27 /* Default@2x.png in Resources */,
 				062C3EA2164F50CF0090CB27 /* Default-568h@2x.png in Resources */,
 				062C3EA5164F50CF0090CB27 /* MainStoryboard.storyboard in Resources */,
+				062C3EC1164F55100090CB27 /* button_glow_01.png in Resources */,
+				062C3EC2164F55100090CB27 /* button_MID_01.png in Resources */,
+				062C3EC3164F55100090CB27 /* button_OFF_01@2x.png in Resources */,
+				062C3EC4164F55100090CB27 /* button_ON_01@2x.png in Resources */,
+				062C3EC5164F55100090CB27 /* new_icon_push_01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +214,7 @@
 				062C3E98164F50CE0090CB27 /* main.m in Sources */,
 				062C3E9C164F50CE0090CB27 /* AppDelegate.m in Sources */,
 				062C3EA8164F50CF0090CB27 /* ViewController.m in Sources */,
+				062C3EB4164F52D80090CB27 /* BFAlienSwitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +331,7 @@
 				062C3EAD164F50CF0090CB27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

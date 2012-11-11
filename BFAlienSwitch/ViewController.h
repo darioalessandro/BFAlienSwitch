@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BFAlienSwitch;
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet BFAlienSwitch *alienSwitch;
 
 @end
