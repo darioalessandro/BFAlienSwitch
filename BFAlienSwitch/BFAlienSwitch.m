@@ -11,6 +11,7 @@
 
 @implementation BFAlienSwitch{
     BFAlienSwitchHandler _handler;
+    BFAlienSwitchTransitionState _transitionState;
 }
 
 +(BFAlienSwitch *)alienSwitchWithHandler:(BFAlienSwitchHandler) handler{
@@ -47,12 +48,12 @@
 
 -(void)toggleSwitch{
     CATransition * trans=[CATransition animation];
-    [trans setDuration:0.5];
+    [trans setDuration:0.2];
     [trans setType:kCATransitionFade];
     [trans setSubtype:kCATransitionFromLeft];
-    [self.layer addAnimation:trans forKey:@"switchState"];
-    [trans setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-    
+    [self.layer addAnimation:trans forKey:@"BFAlienSwitchTransitionStateStarted"];
+    [trans setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
+    _transitionState=BFAlienSwitchTransitionStateStarted;
     [self setOn:![self isOn]];
     if(_handler)
         _handler(self);
@@ -66,16 +67,33 @@
     _on=on;
     [self setNeedsDisplay];
 }
+
+-(void)kickOffSecondPartOfTransition{
+    CATransition * trans=[CATransition animation];
+    [trans setDuration:0.3];
+    [trans setType:kCATransitionFade];
+    [trans setSubtype:kCATransitionFromLeft];
+    [self.layer addAnimation:trans forKey:@"BFAlienSwitchTransitionStateInProgress"];
+    [trans setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
+    _transitionState=BFAlienSwitchTransitionStateInProgress;
+    [self setNeedsDisplay];
+}
     
 
 
 - (void)drawRect:(CGRect)rect
 {
     UIImage * imgToShow=nil;
-    if (self.isOn) {
-        imgToShow=[UIImage imageNamed:@"button_ON_01"];
-    }else{
-        imgToShow=[UIImage imageNamed:@"button_OFF_01"];
+    if(_transitionState==BFAlienSwitchTransitionStateInProgress || _transitionState==BFAlienSwitchTransitionStateDone){
+        if (self.isOn) {
+            imgToShow=[UIImage imageNamed:@"button_ON_01"];
+        }else{
+            imgToShow=[UIImage imageNamed:@"button_OFF_01"];
+        }
+        _transitionState=BFAlienSwitchTransitionStateDone;
+    }else if(_transitionState==BFAlienSwitchTransitionStateStarted){
+        imgToShow=[UIImage imageNamed:@"button_MID_01"];
+        [self performSelector:@selector(kickOffSecondPartOfTransition) withObject:nil afterDelay:0.5];
     }
     [imgToShow drawInRect:rect];
 

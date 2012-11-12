@@ -11,6 +11,12 @@
 @class BFAlienSwitch;
 typedef void(^BFAlienSwitchHandler)(BFAlienSwitch * alienSwitch);
 
+typedef enum BFAlienSwitchTransitionState {
+        BFAlienSwitchTransitionStateStarted,
+        BFAlienSwitchTransitionStateInProgress,
+        BFAlienSwitchTransitionStateDone
+    } BFAlienSwitchTransitionState;
+
 @interface BFAlienSwitch : UIView
 
 +(BFAlienSwitch *)alienSwitchWithHandler:(BFAlienSwitchHandler) handler;
