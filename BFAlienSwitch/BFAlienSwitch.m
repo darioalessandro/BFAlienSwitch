@@ -53,7 +53,7 @@
     [trans setSubtype:kCATransitionFromLeft];
     [self.layer addAnimation:trans forKey:@"BFAlienSwitchTransitionStateStarted"];
     [trans setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
-    _transitionState=BFAlienSwitchTransitionStateStarted;
+    _transitionState=BFAlienSwitchTransitionStateInProgress;
     [self setOn:![self isOn]];
     if(_handler)
         _handler(self);
